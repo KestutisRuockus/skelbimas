@@ -30,4 +30,50 @@ public class UserDAO {
         }
         return msg;
     }
+
+    // Login into
+    public String login(String username, String password){
+        String msg = "";
+        String query = "SELECT * FROM " + Constant.TABLE_NAME + " WHERE username LIKE ? AND password LIKE ?";
+        try {
+            connection = DriverManager.getConnection(Constant.URL + Constant.DB_NAME, "root", "");
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                msg = "Successfully logged in";
+            } else {
+                msg = "No user found";
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return msg;
+    }
+
+    public User getUser(String username){
+        boolean isAdmin = false;
+        User user = null;
+        String query = "SELECT * FROM " + Constant.TABLE_NAME + " WHERE username LIKE ?";
+        try {
+            connection = DriverManager.getConnection(Constant.URL + Constant.DB_NAME, "root", "");
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                int id1 = resultSet.getInt("id");
+                String username1 = resultSet.getString("username");
+                String password1 = resultSet.getString("password");
+                String email1 = resultSet.getString("email");
+                boolean admin1 = resultSet.getBoolean("admin");
+                user = new User(id1, username1, password1, email1, admin1);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return user;
+    }
 }

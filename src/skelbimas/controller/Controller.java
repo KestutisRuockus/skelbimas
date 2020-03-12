@@ -1,7 +1,9 @@
 package skelbimas.controller;
 
+import javafx.scene.control.Label;
 import skelbimas.model.User;
 import skelbimas.model.UserDAO;
+import skelbimas.utils.Constant;
 import skelbimas.utils.Validation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
+import java.sql.*;
 
 public class Controller {
 
@@ -24,7 +27,7 @@ public class Controller {
     @FXML
     private Button exit;
 
-    // register window
+    // Register stage
     @FXML
     private javafx.scene.control.Label regWarning;
     @FXML
@@ -38,15 +41,23 @@ public class Controller {
     @FXML
     private CheckBox regIsAdmin;
 
+    // Login Stage
+    @FXML
+    private Label loginWarning;
+    @FXML
+    private TextField loginUsername;
+    @FXML
+    private PasswordField loginPassword;
 
-    // closes program when clicked on 'X' button
+
+    // closes login or register windows when clicked on 'X' button
     public void closeWindow(ActionEvent event) {
         if (event.getSource() == exit) {
             System.exit(0);
         }
     }
 
-    // Returns to login window
+    // Returns to login window from registration window
     public void backToLoginWindow(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../view/Login.fxml"));
         Stage stage = new Stage();
@@ -56,7 +67,7 @@ public class Controller {
         stage.show();
     }
 
-    // New user registration window
+    // Open new user registration window
     public void openRegistrationWindow(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(getClass().getResource("../view/Register.fxml"));
@@ -67,6 +78,7 @@ public class Controller {
         ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
+    // Checks new registration validation and creating new user
     public void registerUser(ActionEvent event) {
         boolean isRegistered = true;
 
@@ -106,6 +118,35 @@ public class Controller {
             } else{
                 regWarning.setText(msg);
             }
+        }
+    }
+
+    // Login into Adds
+    public void login(ActionEvent event){
+        if (Validation.isValidUsername(loginUsername.getText()) && Validation.isValidPassword(loginPassword.getText())){
+            UserDAO userDAO = new UserDAO();
+            String msg = userDAO.login(loginUsername.getText(), loginPassword.getText());
+            if (msg.contains("Successfully")) {
+                User user = userDAO.getUser(loginUsername.getText());
+                mainStage(event, user);
+            } else {
+                loginWarning.setText(msg);
+            }
+        } else {
+            loginWarning.setText("Wrong username or password.");
+        }
+    }
+
+    public void mainStage(ActionEvent event, User user) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../view/Skelbimas.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Skelbimai");
+            stage.setScene(new Scene(root, 1300, 900));
+            stage.show();
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        }catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
