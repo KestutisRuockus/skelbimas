@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: #BA3434;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skelbimai.controller.Controller">
+    <children>
+        <Label layoutY="27.0" prefHeight="73.0" prefWidth="1310.0" style="-fx-background-color: #ff8c00;" text="   SKELBIMAI.ru  --&gt;  skelbimas">
+            <font>
+                <Font name="Algerian" size="64.0" />
+            </font>
+        </Label>
+        <Button layoutX="1179.0" layoutY="7.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="LOG OUT" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Label layoutX="178.0" layoutY="150.0" prefHeight="28.0" prefWidth="163.0" text="pavadinimas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="237.0" layoutY="269.0" prefHeight="28.0" prefWidth="104.0" text="miestas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="216.0" layoutY="310.0" prefHeight="28.0" prefWidth="405.0" text="kaina nuo                      iki">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="735.0" layoutY="190.0" prefHeight="28.0" prefWidth="187.0" text="APRAŠYMAS">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <TextArea layoutX="735.0" layoutY="230.0" prefHeight="206.0" prefWidth="560.0" style="back: #B9B8B9;" />
+        <Label layoutX="154.0" layoutY="190.0" prefHeight="28.0" prefWidth="187.0" text="skelbimo tipas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="100.0" layoutY="373.0" prefHeight="28.0" prefWidth="241.0" text="naujas / naudotas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="735.0" layoutY="150.0" prefHeight="28.0" prefWidth="256.0" text="kontaktai">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <TextField layoutX="360.0" layoutY="151.0" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #B9B8B9;" />
+        <TextField layoutX="890.0" layoutY="150.0" prefHeight="25.0" prefWidth="405.0" style="-fx-background-color: #B9B8B9;" />
+        <CheckBox layoutX="360.0" layoutY="378.0" mnemonicParsing="false" text="Naujas" />
+        <CheckBox layoutX="430.0" layoutY="378.0" mnemonicParsing="false" text="Naudotas" />
+        <TextField layoutX="360.0" layoutY="310.0" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #B9B8B9;" />
+        <TextField layoutX="519.0" layoutY="310.0" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #B9B8B9;" />
+        <ComboBox layoutX="360.0" layoutY="270.0" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #B9B8B9;" />
+        <RadioButton layoutX="360.0" layoutY="197.0" mnemonicParsing="false" text="TRANSPORTAS">
+            <toggleGroup>
+                <ToggleGroup fx:id="tipas" />
+            </toggleGroup></RadioButton>
+        <RadioButton layoutX="470.0" layoutY="197.0" mnemonicParsing="false" text="DARBAS" toggleGroup="$tipas" />
+        <RadioButton layoutX="570.0" layoutY="197.0" mnemonicParsing="false" text="NEKILNOJAMAS TURTAS" toggleGroup="$tipas" />
+        <RadioButton layoutX="360.0" layoutY="233.0" mnemonicParsing="false" text="DRABUŽIAI" toggleGroup="$tipas" />
+        <RadioButton layoutX="470.0" layoutY="233.0" mnemonicParsing="false" text="TECHNIKA" toggleGroup="$tipas" />
+        <RadioButton layoutX="570.0" layoutY="233.0" mnemonicParsing="false" selected="true" text="KITA" toggleGroup="$tipas" />
+        <TableView layoutX="100.0" layoutY="509.0" prefHeight="359.0" prefWidth="1195.0" style="-fx-background-color: #B9B8B9;">
+            <columns>
+                <TableColumn prefWidth="75.0" text="ID" />
+                <TableColumn prefWidth="97.0" text="PAVADNIMAS" />
+                <TableColumn prefWidth="75.0" text="TIPAS" />
+                <TableColumn prefWidth="75.0" text="MIESTAS" />
+                <TableColumn prefWidth="134.0" text="NAUJAS/NAUDOTAS" />
+                <TableColumn prefWidth="92.0" text="KONTAKTAI" />
+                <TableColumn prefWidth="366.0" text="APRAŠYMAS" />
+            </columns>
+        </TableView>
+        <Button layoutX="100.0" layoutY="450.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="SEARCH" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="250.0" layoutY="450.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="CREATE" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="400.0" layoutY="450.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="UPDATE" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="550.0" layoutY="450.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="DELETE" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

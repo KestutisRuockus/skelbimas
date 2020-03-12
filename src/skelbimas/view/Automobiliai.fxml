@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: #BA3434;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skelbimai.controller.Controller">
+    <children>
+        <Pane layoutX="170.0" layoutY="308.0" prefHeight="234.0" prefWidth="1013.0" style="-fx-background-color: #BA3434; -fx-border-color: #ff8c00; -fx-border-width: 5;" />
+        <Label layoutY="27.0" prefHeight="73.0" prefWidth="1300.0" style="-fx-background-color: #ff8c00;" text="   SKELBIMAI.ru  --&gt;  AUtomobiliai">
+            <font>
+                <Font name="Algerian" size="64.0" />
+            </font>
+        </Label>
+        <Label layoutX="200.0" layoutY="190.0" prefHeight="28.0" prefWidth="141.0" text="metai">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="200.0" layoutY="230.0" prefHeight="28.0" prefWidth="297.0" text="Kaina  nuo                  iki">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="200.0" layoutY="270.0" prefHeight="28.0" prefWidth="141.0" text="miestas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="650.0" layoutY="150.0" prefHeight="28.0" prefWidth="141.0" text="kuro tipas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="650.0" layoutY="190.0" prefHeight="28.0" prefWidth="181.0" text="Kebulo tipas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="200.0" layoutY="150.0" prefHeight="28.0" prefWidth="141.0" text="Marke">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="650.0" layoutY="230.0" prefHeight="28.0" prefWidth="141.0" text="spalva">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="650.0" layoutY="270.0" prefHeight="28.0" prefWidth="141.0" text="kontaktai">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <TextField layoutX="830.0" layoutY="230.0" prefHeight="25.0" prefWidth="219.0" style="-fx-background-color: #B9B8B9;" />
+        <TextField layoutX="830.0" layoutY="270.0" prefHeight="25.0" prefWidth="219.0" style="-fx-background-color: #B9B8B9;" />
+        <RadioButton layoutX="830.0" layoutY="155.0" mnemonicParsing="false" text="BENZINAS" />
+        <RadioButton layoutX="930.0" layoutY="155.0" mnemonicParsing="false" text="DYZELINAS" />
+        <RadioButton layoutX="1030.0" layoutY="155.0" mnemonicParsing="false" text="BENZINAS/DUJOS" />
+        <RadioButton layoutX="1160.0" layoutY="155.0" mnemonicParsing="false" text="ELEKTRA" />
+        <RadioButton layoutX="830.0" layoutY="195.0" mnemonicParsing="false" text="SEDANAS" />
+        <RadioButton layoutX="930.0" layoutY="195.0" mnemonicParsing="false" text="HEČBEKAS" />
+        <RadioButton layoutX="1030.0" layoutY="195.0" mnemonicParsing="false" text="UNIVERSALAS" />
+        <RadioButton layoutX="1160.0" layoutY="195.0" mnemonicParsing="false" text="COUPE" />
+        <Label layoutX="200.0" layoutY="330.0" prefHeight="28.0" prefWidth="141.0" text="YPATUMai:">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <CheckBox layoutX="200.0" layoutY="420.0" mnemonicParsing="false" text="EL. LANGAI" />
+        <CheckBox layoutX="200.0" layoutY="460.0" mnemonicParsing="false" text="ODINIS SALONAS" />
+        <CheckBox layoutX="200.0" layoutY="500.0" mnemonicParsing="false" text="ORO KONDICIONIERIUS" />
+        <CheckBox layoutX="450.0" layoutY="420.0" mnemonicParsing="false" text="KABLYS" />
+        <CheckBox layoutX="450.0" layoutY="460.0" mnemonicParsing="false" text="STOGLANGIS" />
+        <CheckBox layoutX="700.0" layoutY="420.0" mnemonicParsing="false" text="NAVIGACIJA" />
+        <CheckBox layoutX="700.0" layoutY="460.0" mnemonicParsing="false" text="KRUIZO KONTROLĖ" />
+        <CheckBox layoutX="450.0" layoutY="500.0" mnemonicParsing="false" text="ŽIBINTAI &quot;XENON&quot;" />
+        <CheckBox layoutX="700.0" layoutY="500.0" mnemonicParsing="false" text="LAISVŲ RANKŲ ĮRANGA" />
+        <CheckBox layoutX="950.0" layoutY="420.0" mnemonicParsing="false" text="SIGNALIZACIJA / IMOBILAIZERIS" />
+        <CheckBox layoutX="950.0" layoutY="460.0" mnemonicParsing="false" text="STABILUMO KONTROLĖS SISTEMA" />
+        <CheckBox layoutX="950.0" layoutY="500.0" mnemonicParsing="false" text="ORO PAGALVĖS" />
+        <Label layoutX="200.0" layoutY="380.0" prefHeight="28.0" prefWidth="150.0" text="interjeras:">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="450.0" layoutY="380.0" prefHeight="28.0" prefWidth="174.0" text="eksterjeras:">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="700.0" layoutY="380.0" prefHeight="28.0" prefWidth="174.0" text="elektronika:">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="950.0" layoutY="380.0" prefHeight="28.0" prefWidth="174.0" text="saugumas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <TableView layoutX="41.0" layoutY="603.0" prefHeight="264.0" prefWidth="1213.0" style="-fx-background-color: #B9B8B9;">
+            <columns>
+                <TableColumn prefWidth="40.0" text="ID" />
+                <TableColumn prefWidth="149.0" text="MARKRĖ" />
+                <TableColumn prefWidth="75.0" text="METAI" />
+                <TableColumn prefWidth="75.0" text="KAINA" />
+                <TableColumn prefWidth="75.0" text="MIESTAS" />
+                <TableColumn prefWidth="75.0" text="KURO TIPAS" />
+                <TableColumn prefWidth="112.0" text="KĖBULO TIPAS" />
+                <TableColumn prefWidth="75.0" text="SPALVA" />
+                <TableColumn prefWidth="75.0" text="KONTAKTAI" />
+                <TableColumn prefWidth="75.0" text="OWNER" />
+            </columns>
+        </TableView>
+        <Button layoutX="170.0" layoutY="552.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="SEARCH" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="320.0" layoutY="552.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="CREATE" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="470.0" layoutY="552.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="UPDATE" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="620.0" layoutY="552.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="DELETE" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <TextField layoutX="340.0" layoutY="270.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: #B9B8B9;" />
+        <TextField layoutX="340.0" layoutY="190.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: #B9B8B9;" />
+        <TextField layoutX="340.0" layoutY="230.0" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #B9B8B9;" />
+        <TextField layoutX="481.0" layoutY="230.0" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #B9B8B9;" />
+        <ComboBox layoutX="340.0" layoutY="150.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: #B9B8B9;" />
+        <Button layoutX="1169.0" layoutY="8.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="LOG OUT" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

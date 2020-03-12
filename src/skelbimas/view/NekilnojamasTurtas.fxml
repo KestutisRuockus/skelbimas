@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1300.0" style="-fx-background-color: #BA3434;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skelbimai.controller.Controller">
+    <children>
+        <Label layoutY="37.0" prefHeight="73.0" prefWidth="1310.0" style="-fx-background-color: #ff8c00;" text="   SKELBIMAI.ru --&gt; Nekilnojamas turtas">
+            <font>
+                <Font name="Algerian" size="64.0" />
+            </font>
+        </Label>
+        <Label layoutX="350.0" layoutY="200.0" prefHeight="28.0" prefWidth="112.0" text="miestas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="350.0" layoutY="240.0" prefHeight="28.0" prefWidth="118.0" text="adresas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="750.0" layoutY="160.0" prefHeight="28.0" prefWidth="165.0" text="plotas (M2)">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="750.0" layoutY="200.0" prefHeight="28.0" prefWidth="165.0" text="metai">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="350.0" layoutY="160.0" prefHeight="28.0" prefWidth="112.0" text="tipas">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <RadioButton layoutX="475.0" layoutY="165.0" mnemonicParsing="false" text="NAMAS" />
+        <RadioButton layoutX="550.0" layoutY="165.0" mnemonicParsing="false" text="BUTAS" />
+        <RadioButton layoutX="625.0" layoutY="165.0" mnemonicParsing="false" text="PATALPOS" />
+        <TextField layoutX="475.0" layoutY="200.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: #B9B8B9;" />
+        <TextField layoutX="475.0" layoutY="240.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: #B9B8B9;" />
+        <TextField layoutX="915.0" layoutY="160.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: #B9B8B9;" />
+        <TextField layoutX="915.0" layoutY="200.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: #B9B8B9;" />
+        <Label layoutX="750.0" layoutY="240.0" prefHeight="28.0" prefWidth="297.0" text="Kaina  nuo                      iki">
+            <font>
+                <Font name="Algerian" size="24.0" />
+            </font>
+        </Label>
+        <TextField layoutX="1057.0" layoutY="240.0" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #B9B8B9;" />
+        <TextField layoutX="915.0" layoutY="240.0" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: #B9B8B9;" />
+        <TableView layoutX="198.0" layoutY="350.0" prefHeight="493.0" prefWidth="954.0">
+            <columns>
+                <TableColumn prefWidth="51.0" text="ID" />
+                <TableColumn prefWidth="76.0" text="TIPAS" />
+                <TableColumn prefWidth="75.0" text="MIESTAS" />
+                <TableColumn prefWidth="75.0" text="ADRESAS" />
+                <TableColumn prefWidth="75.0" text="PLOTAS (m)" />
+                <TableColumn prefWidth="75.0" text="METAI" />
+                <TableColumn prefWidth="75.0" text="KAINA" />
+                <TableColumn prefWidth="75.0" text="OWNER" />
+            </columns>
+        </TableView>
+        <Button layoutX="350.0" layoutY="300.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="SEARCH" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="500.0" layoutY="300.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="CREATE" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="650.0" layoutY="300.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="UPDATE" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="800.0" layoutY="300.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="DELETE" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="1178.0" layoutY="7.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="LOG OUT" textFill="#b9b8b9">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
