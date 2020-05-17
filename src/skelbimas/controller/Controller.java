@@ -49,6 +49,14 @@ public class Controller {
     @FXML
     private PasswordField loginPassword;
 
+    // Main Stage
+    @FXML
+    private Label role;
+    @FXML
+    private Label loggedAs;
+
+    User user2;
+
 
     // closes login or register windows when clicked on 'X' button
     public void closeWindow(ActionEvent event) {
@@ -143,6 +151,13 @@ public class Controller {
             Stage stage = new Stage();
             stage.setTitle("Skelbimai");
             stage.setScene(new Scene(root, 1300, 900));
+
+            user2 = user;
+            Label labelLoggedAs = (Label) root.lookup("#loggedAs");
+            Label labelRole = (Label) root.lookup("#role");
+            if (labelLoggedAs != null) labelLoggedAs.setText(user.getUsername());
+            if (labelRole != null) labelRole.setText(user.isAdmin() ? "Admin" : "User");
+
             stage.show();
             ((Node) (event.getSource())).getScene().getWindow().hide();
         }catch (Exception e) {
