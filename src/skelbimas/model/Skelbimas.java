@@ -5,7 +5,7 @@ public class Skelbimas {
     private String pavadinimas;
     private String skelbimoTipas;
     private String miestas;
-    private double kaina;
+    private int kaina;
     private String naujasNaudotas;
     private String kontaktai;
     private String aprasymas;
@@ -13,7 +13,7 @@ public class Skelbimas {
     public Skelbimas() {
     }
 
-    public Skelbimas(int id, String pavadinimas, String skelbimoTipas, String miestas, double kaina, String naujasNaudotas, String kontaktai, String aprasymas) {
+    public Skelbimas(int id, String pavadinimas, String skelbimoTipas, String miestas, int kaina, String naujasNaudotas, String kontaktai, String aprasymas) {
         this.id = id;
         this.pavadinimas = pavadinimas;
         this.skelbimoTipas = skelbimoTipas;
@@ -24,7 +24,7 @@ public class Skelbimas {
         this.aprasymas = aprasymas;
     }
 
-    public Skelbimas(String pavadinimas, String skelbimoTipas, String miestas, double kaina, String naujasNaudotas, String kontaktai, String aprasymas) {
+    public Skelbimas(String pavadinimas, String skelbimoTipas, String miestas, int kaina, String naujasNaudotas, String kontaktai, String aprasymas) {
         this.pavadinimas = pavadinimas;
         this.skelbimoTipas = skelbimoTipas;
         this.miestas = miestas;
@@ -66,11 +66,11 @@ public class Skelbimas {
         this.miestas = miestas;
     }
 
-    public double getKaina() {
+    public int getKaina() {
         return kaina;
     }
 
-    public void setKaina(double kaina) {
+    public void setKaina(int kaina) {
         this.kaina = kaina;
     }
 

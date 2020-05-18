@@ -8,8 +8,7 @@ public class SkelbimasDAO {
     final static String URL = "jdbc:mysql://localhost:3306/skelbimai";
 
     public String add(Skelbimas skelbimas){
-        String query = "INSERT INTO skelbimas (pavadinimas, skelbimo_tipas, miestas, kaina, naujas_naudotas," +
-                " kontaktai, aprasymas) VALUES (?, ?, ?, ?, ?, ?, ?, ?";
+        String query = "INSERT INTO skelbimas (pavadinimas, skelbimo_tipas, miestas, kaina, naujas_naudotas, kontaktai, aprasymas) VALUES (?,?,?,?,?,?,?)";
 
         try {
             Connection connection = DriverManager.getConnection(URL, "root", "");
@@ -17,7 +16,7 @@ public class SkelbimasDAO {
             preparedStatement.setString(1, skelbimas.getPavadinimas());
             preparedStatement.setString(2, skelbimas.getSkelbimoTipas());
             preparedStatement.setString(3, skelbimas.getMiestas());
-            preparedStatement.setDouble(4, skelbimas.getKaina());
+            preparedStatement.setInt(4, skelbimas.getKaina());
             preparedStatement.setString(5, skelbimas.getNaujasNaudotas());
             preparedStatement.setString(6, skelbimas.getKontaktai());
             preparedStatement.setString(7, skelbimas.getAprasymas());
@@ -26,40 +25,40 @@ public class SkelbimasDAO {
             return "Successfully created";
         } catch (SQLException e) {
             e.printStackTrace();
-            return "Failure creating new add";
+            return "Failure creating new ad";
         }
     }
 
-    public String searchByPavadinimas(String pavadinimas){
-        String query = "SELECR * FROM skelbimas WHERE pavadinimas LIKE '"+pavadinimas+"'";
-        ArrayList<Skelbimas> skelbimas = new ArrayList<>();
-        try {
-            Connection connection = DriverManager.getConnection(URL, "root", "");
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            ResultSet resultSet = preparedStatement.executeQuery(query);
-            while (resultSet.next()){
-                int id2 = resultSet.getInt("id");
-                String pavadinimas2 = resultSet.getString("pavadinimas");
-                String skelbimoTipas2 = resultSet.getString("skelbimo_tipas");
-                String miestas2 = resultSet.getString("miestas");
-                Double kaina2 = resultSet.getDouble("kaina");
-                String naujasNaudotas2 = resultSet.getString("naujas_naudotas");
-                String kontaktai2 = resultSet.getString("kontaktai");
-                String aprasymas2 = resultSet.getString("aprasymas");
-                skelbimas.add(new Skelbimas(id2, pavadinimas2, skelbimoTipas2, miestas2, kaina2, naujasNaudotas2,
-                        kontaktai2,aprasymas2));
+    public ResultSet searchByPavadinimas(String pavadinimas, User user){
+        String query = "";
+        if (user.isAdmin()){
+            if (pavadinimas.equals("")){
+                query = "SELECT * FROM skelbimas";
+            } else {
+                query = "SELECT * FROM skelbimas WHERE pavadinimas LIKE '" + pavadinimas + "'";
             }
-            preparedStatement.close();
-            connection.close();
-            return "" + skelbimas;
+        } else {
+            if (pavadinimas.equals("")){
+                query = "SELECT * FROM skelbimas WHERE id = '" + user.getId() + "'";
+            } else {
+                query = "SELECT * FROM skelbimas WHERE id = '" + user.getId() + "' AND pavadinimas LIKE '" + pavadinimas + "'";
+            }
+        }
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            connection = DriverManager.getConnection(URL, "root", "");
+            preparedStatement = connection.prepareStatement(query);
+            resultSet = preparedStatement.executeQuery(query);
         } catch (SQLException e) {
             e.printStackTrace();
-            return "Search Failure";
         }
+        return resultSet;
     }
 
     public String editById(Skelbimas skelbimas){
-        String query = "UPDATE skelbimas set pavadinimas = ?, skelbimo_tipas = ?, miestas = ?, kaina = ?," +
+        String query = "UPDATE skelbimas SET pavadinimas = ?, skelbimo_tipas = ?, miestas = ?, kaina = ?," +
                 " naujas_naudotas = ?, kontaktai = ?, aprasymas = ? WHERE id = ?";
         try {
             Connection connection = DriverManager.getConnection(URL, "root", "");
@@ -67,10 +66,11 @@ public class SkelbimasDAO {
             preparedStatement.setString(1, skelbimas.getPavadinimas());
             preparedStatement.setString(2, skelbimas.getSkelbimoTipas());
             preparedStatement.setString(3, skelbimas.getMiestas());
-            preparedStatement.setDouble(4, skelbimas.getKaina());
+            preparedStatement.setInt(4, skelbimas.getKaina());
             preparedStatement.setString(5, skelbimas.getNaujasNaudotas());
             preparedStatement.setString(6, skelbimas.getKontaktai());
             preparedStatement.setString(7, skelbimas.getAprasymas());
+            preparedStatement.setInt(8, skelbimas.getId());
             preparedStatement.executeUpdate();
 
             return "Successfully Updated";

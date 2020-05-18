@@ -38,7 +38,7 @@
                 <Font name="Algerian" size="24.0" />
             </font>
         </Label>
-        <Label layoutX="216.0" layoutY="310.0" prefHeight="28.0" prefWidth="405.0" text="kaina nuo                      iki">
+        <Label layoutX="260.0" layoutY="309.0" prefHeight="28.0" prefWidth="405.0" text="kaina">
             <font>
                 <Font name="Algerian" size="24.0" />
             </font>
@@ -59,17 +59,16 @@
                 <Font name="Algerian" size="24.0" />
             </font>
         </Label>
-        <Label layoutX="735.0" layoutY="150.0" prefHeight="28.0" prefWidth="361.0" text="kontaktai (Tel nr, vardas)">
+        <Label layoutX="735.0" layoutY="150.0" prefHeight="28.0" prefWidth="361.0" text="kontaktai (Tel nr)">
             <font>
                 <Font name="Algerian" size="24.0" />
             </font>
         </Label>
         <TextField fx:id="pavadinimas" layoutX="360.0" layoutY="151.0" prefHeight="25.0" prefWidth="256.0" style="-fx-background-color: #B9B8B9;" />
         <TextField fx:id="kontaktai" layoutX="735.0" layoutY="190.0" prefHeight="25.0" prefWidth="262.0" style="-fx-background-color: #B9B8B9;" />
-        <CheckBox fx:id="naujas" layoutX="360.0" layoutY="378.0" mnemonicParsing="false" text="Naujas" />
-        <CheckBox fx:id="naudotos" layoutX="430.0" layoutY="378.0" mnemonicParsing="false" text="Naudotas" />
-        <TextField fx:id="kainuoNuo" layoutX="360.0" layoutY="310.0" prefHeight="25.0" prefWidth="98.0" promptText="0" style="-fx-background-color: #B9B8B9;" text="0" />
-        <TextField fx:id="kainaIki" layoutX="519.0" layoutY="310.0" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #B9B8B9;" text="0" />
+        <CheckBox fx:id="naujas" layoutX="360.0" layoutY="378.0" mnemonicParsing="false" selected="true" text="Naujas" />
+        <CheckBox fx:id="naudotas" layoutX="430.0" layoutY="378.0" mnemonicParsing="false" text="Naudotas" />
+        <TextField fx:id="kaina" layoutX="360.0" layoutY="310.0" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #B9B8B9;" />
         <ComboBox fx:id="miestas" layoutX="360.0" layoutY="270.0" prefHeight="25.0" prefWidth="256.0" promptText="Pasirinkite Miestą" style="-fx-background-color: #B9B8B9;">
             <items>
                 <FXCollections fx:factory="observableArrayList">
@@ -107,22 +106,22 @@
                 <TableColumn fx:id="tableAprasymas" prefWidth="366.0" text="APRAŠYMAS" />
             </columns>
         </TableView>
-        <Button fx:id="search" layoutX="100.0" layoutY="450.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="SEARCH" textFill="#b9b8b9">
+        <Button fx:id="search" layoutX="100.0" layoutY="450.0" mnemonicParsing="false" onAction="#search" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="SEARCH" textFill="#b9b8b9">
             <font>
                 <Font name="System Bold Italic" size="18.0" />
             </font>
         </Button>
-        <Button fx:id="create" layoutX="250.0" layoutY="450.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="CREATE" textFill="#b9b8b9">
+        <Button fx:id="create" layoutX="250.0" layoutY="450.0" mnemonicParsing="false" onAction="#create" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="CREATE" textFill="#b9b8b9">
             <font>
                 <Font name="System Bold Italic" size="18.0" />
             </font>
         </Button>
-        <Button fx:id="update" layoutX="400.0" layoutY="450.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="UPDATE" textFill="#b9b8b9">
+        <Button fx:id="update" layoutX="400.0" layoutY="450.0" mnemonicParsing="false" onAction="#update" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="UPDATE" textFill="#b9b8b9">
             <font>
                 <Font name="System Bold Italic" size="18.0" />
             </font>
         </Button>
-        <Button fx:id="delete" layoutX="550.0" layoutY="450.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="DELETE" textFill="#b9b8b9">
+        <Button fx:id="delete" layoutX="550.0" layoutY="450.0" mnemonicParsing="false" onAction="#delete" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #000;" text="DELETE" textFill="#b9b8b9">
             <font>
                 <Font name="System Bold Italic" size="18.0" />
             </font>
@@ -135,5 +134,12 @@
             <Label fx:id="loggedAs" layoutX="80.0" layoutY="31.0" prefHeight="17.0" prefWidth="180.0" text="b" />
          </children>
       </Pane>
+      <Label fx:id="warning" alignment="CENTER" layoutX="701.0" layoutY="450.0" prefHeight="39.0" prefWidth="581.0" textFill="WHITE" />
+      <TextField fx:id="id" layoutX="360.0" layoutY="110.0" prefHeight="25.0" prefWidth="124.0" style="-fx-background-color: #B9B8B9;" />
+      <Label alignment="CENTER_RIGHT" layoutX="179.0" layoutY="109.0" prefHeight="28.0" prefWidth="163.0" text="ID">
+         <font>
+            <Font name="Algerian" size="24.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
